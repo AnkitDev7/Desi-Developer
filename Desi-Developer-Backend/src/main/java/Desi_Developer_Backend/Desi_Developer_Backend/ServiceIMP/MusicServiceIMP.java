@@ -6,8 +6,6 @@ import Desi_Developer_Backend.Desi_Developer_Backend.Service.MusicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -80,23 +78,19 @@ public class MusicServiceIMP implements MusicService {
                     StandardCopyOption.REPLACE_EXISTING
             );
 
-
             // Audio URL
-
             String audioUrl =
-                    "/covers/" + coverFileName;
+                    "/music/" + musicFileName;
 
-            // cover Url
+            // Cover URL
             String coverUrl =
                     "/covers/" + coverFileName;
 
             // Data set
-
             Music music = new Music();
             music.setArtist(musicDTO.getArtist());
             music.setAlbum(musicDTO.getAlbum());
             music.setTitle(musicDTO.getTitle());
-            music.setAlbum(musicDTO.getAlbum());
 
             music.setAudioUrl(audioUrl);
             music.setCoverUrl(coverUrl);
