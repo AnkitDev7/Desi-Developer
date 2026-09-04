@@ -11,11 +11,21 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Music {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String title;
+
+    @Column(nullable = false)
     private String artist;
+
+    private String album;
+
+    @Column(nullable = false)
     private String audioUrl;
+
+    private String coverUrl;
 }
